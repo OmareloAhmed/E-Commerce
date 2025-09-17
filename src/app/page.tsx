@@ -12,7 +12,7 @@ export default async function Home() {
   return ( 
     <>
     <MainSlider />
-      <h1>home</h1>
+      <h1> home </h1>
       <div className="grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8 ">
         <Suspense fallback={<HomeLoading/>} >
         {
