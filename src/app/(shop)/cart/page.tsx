@@ -64,7 +64,7 @@ export default function Cart() {
   return (
     <div>
       <h1 className="text-3xl mt-15">shop cart</h1>
-      {cartLoading ? <h1 className='text-3xl'>loading</h1> : <>
+      {cartLoading ? <h1 className='text-3xl'>loaddding</h1> : <>
         {cart != undefined && cart?.totalCartPrice != 0 ? <>
           {/* <h2 className='text-2xl text-red-500'>Total Price {cart?.totalCartPrice}</h2> */}
           <Button onClick={clearCartData} className='bg-red-600 rounded-3xl p-5 float-right' >Clear Cart</Button>
