@@ -3,14 +3,11 @@ import { decode } from "next-auth/jwt";
 import { cookies } from "next/headers";
 
 export async function getUserToken() {
+    const TokenSession = (process.env.NODE_ENV === "production" ? "__Secure-next-auth.session-token" : "next-auth.session-token")
     const cookiesData = await cookies()
-    const encryptToken= cookiesData.get("next-auth.session-token")?.value
+    const encryptToken= cookiesData.get(TokenSession)?.value
     console.log(encryptToken);
-
-    // if (!encryptToken) {
-    //     throw new Error("Missing token");
-    // }
-
+    
     const data =await decode({ token: encryptToken, secret: process.env.NEXTAUTH_SECRET! })
     return data?.token
 
